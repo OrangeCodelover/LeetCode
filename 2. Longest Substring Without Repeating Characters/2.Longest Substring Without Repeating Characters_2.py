@@ -11,8 +11,9 @@ def lengthOfLongestSubstring(s: str) -> int:
                 max = len(List)
         
         else:
+            start_index = List.index(n)            
+            List = List[(start_index+1):]
             List = List +n
-            List = List[1:]
             print(List)
     return max
             
