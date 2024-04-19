@@ -1,32 +1,46 @@
 
-def longestPalindrome(s: str) -> int:
+def longestPalindrome(s: str) -> str:
     Palindromic =''
-    for i in range(0,len(s)):
-        k = 0
-        # even number
-        while  (i-k >=0 and i+k+1 < len(s)) and s[i-k] == s[i+1+k]:
-            if len(s[(i-k):(i+1+k+1)]) > len(Palindromic):
-                Palindromic = s[(i-k):(i+1+k+1)]
-                #print(Palindromic)
-            k = k+1
+    for i in range(len(s)):
         # odd number
-        while  (i-k >=0 and i+k < len(s)) and s[i-k] == s[i+k]:
-            if len(s[(i-k):(i+k+1)]) > len(Palindromic):
+        k= 0
+        while  i-k >=0 and i+k < len(s) and s[i-k] == s[i+k]:
+            if 2*k+1 > len(Palindromic):
                 Palindromic = s[(i-k):(i+k+1)]
                 #print(Palindromic)
-            k = k+1
+            k +=1
+
+        # even number
+        k = 0
+        while  i-k >=0 and i+k+1 < len(s) and s[i-k] == s[i+1+k]:
+            if 2*k+2 > len(Palindromic):
+                Palindromic = s[(i-k):(i+k+1+1)]
+                #print(Palindromic)
+            k +=1
 
     return Palindromic  
 
 
-#EX_1
-s = "babad"
-a = longestPalindrome(s)
-print(a)
-# bab
+# #EX_1
+# s = "babad"
+# a = longestPalindrome(s)
+# print(a)
+# # bab
 
 #EX_2
 s = "cbbd" 
+b = longestPalindrome(s)
+print(b)
+# bb
+
+# #EX_3
+# s = "321012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210123210012321001232100123210123" 
+# b = longestPalindrome(s)
+# print(b)
+# # bb
+
+# EX_4
+s = "ac" 
 b = longestPalindrome(s)
 print(b)
 # bb
