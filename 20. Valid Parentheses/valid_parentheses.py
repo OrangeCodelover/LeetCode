@@ -15,32 +15,3 @@ def isValid( s: str) -> bool:
     if s_1 != "":
         return False
     return True    
-
-
-
-    #EX_1
-s = "){"
-a = isValid(s)
-print(a)
-
-    #EX_1
-s = "(())(())"
-a = isValid(s)
-print(a)
-
-    #EX_2
-s = "()[]{}"
-a = isValid(s)
-print(a)
-
-    #EX_3
-s = "(]"
-a = isValid(s)
-print(a)
-
-    #EX_4
-s = "]"
-a = isValid(s)
-print(a)
-
-
