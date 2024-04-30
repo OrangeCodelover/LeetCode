@@ -30,11 +30,3 @@ class Solution:
             merge_list = merge_list.next
         return merge_list
         
-#     #EX_1
-# list1 = [1,2,4]
-# list2 = [1,3,4]
-# a = mergeTwoLists( list1, list2)
-# print(a)
-
-
-        
