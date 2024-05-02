@@ -8,12 +8,13 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        merge_list = ListNode(0)
+        dummy = ListNode(0)
+        merge_list = dummy
         while (list1 is not None) or (list2 is not None):
             if list1 is None:
                 merge_list.next = ListNode(list2.val)
                 list2 = list2.next
-            elif list1 is None:
+            elif list2 is None:
                 merge_list.next = ListNode(list1.val)
                 list1 = list1.next
             elif list1.val > list2.val:
@@ -23,10 +24,8 @@ class Solution:
                 merge_list.next = ListNode(list1.val)
                 list1 = list1.next
             else:
-                merge_list.next = ListNode(list1.val)
-                merge_list.next = ListNode(list2.val)
+                merge_list.next = ListNode(list1.val)                
                 list1 = list1.next
-                list2 = list2.next
+                
             merge_list = merge_list.next
-        return merge_list
-        
+        return dummy.next
