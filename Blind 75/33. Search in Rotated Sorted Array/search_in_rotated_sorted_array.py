@@ -2,16 +2,15 @@ from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        if len(nums) == 1 and nums(0) == target:
-            return 0
-        i = 1
-        while i < len(nums):
-            if target == nums(i):
+        i = 0
+        nums_len = len(nums)
+        while i < nums_len:
+            if target == nums[i]:
                 return i
-            elif target == nums(-i):
-                return len(nums) - i
-            elif target > nums(i) and target < nums(-i):
+            elif target == nums[nums_len-i-1]:
+                return nums_len-i-1
+            elif target > nums[i] or target < nums[nums_len-i-1]:
                 i+=1
             else:
                 return -1
-
+        return -1
