@@ -10,6 +10,14 @@ class testFindDifference(unittest.TestCase):
         solution_instance = Solution()
         output = solution_instance.findDifference(nums1,nums2)
         self.assertEqual(output, expected)
+    
+    def test_sample_2(self):
+        nums1 = [1,2,3,3]
+        nums2 = [1,1,2,2]
+        expected = [[3],[]]
+        solution_instance = Solution()
+        output = solution_instance.findDifference(nums1,nums2)
+        self.assertEqual(output, expected)
 
 if __name__ == "__main__":
     unittest.main()
